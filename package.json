@@ -1,5 +1,5 @@
 {
-  "name": "umbrel-nostr-relay",
+  "name": "umbrel-nostr-relay-monitor",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
