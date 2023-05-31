@@ -1,12 +1,6 @@
 version: "3.7"
 
 services:
-  server:
-    image: lnmarkets/nostr-rs-relay:0.7.16@sha256:3e5f0dbb3d45c701fbe06b7d2deadf6694f3231ec2d79a9bc1932ca80d153a9f
-    restart: on-failure
-    volumes:
-      - ${PWD}/data/relay/config.toml:/home/.nostr-rs-relay/config.toml
-      - ${PWD}/data/relay/db:/home/.nostr-rs-relay/db
 
   web:
     image: getumbrel/umbrel-nostr-relay
@@ -14,7 +8,7 @@ services:
     user: "1000:1000"
     restart: on-failure
     environment:
-      RELAY_HOST: "server"
+      RELAY_HOST: "192.168.141.237"  #change this to the local address of your relay
       RELAY_PORT: "8080"
     ports:
       - 3000:3000
