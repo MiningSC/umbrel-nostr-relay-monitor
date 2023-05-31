@@ -1,5 +1,5 @@
 # Build Stage
-FROM node:18-buster-slim AS umbrel-nostr-relay-builder
+FROM node:18-buster-slim AS umbrel-nostr-relay-monitor-builder
 
 # Create app directory
 WORKDIR /app
@@ -19,4 +19,4 @@ RUN npm run build
 WORKDIR /app
 
 # Copy built code from build stage to '/app' directory
-COPY --from=umbrel-nostr-relay-builder /app /app
+COPY --from=umbrel-nostr-relay-monitor-builder /app /app
