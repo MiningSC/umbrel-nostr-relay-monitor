@@ -13,6 +13,9 @@ RUN npm ci
 # Build project
 RUN npm run build
 
+# Adjust permissions of node_modules and .cache after build process, to ensure folders exist
+RUN chmod -R 777 node_modules/ || true && chmod -R 777 node_modules/.cache/ || true
+
 # Final image
 FROM node:18-buster-slim AS umbrel-nostr-relay
 
