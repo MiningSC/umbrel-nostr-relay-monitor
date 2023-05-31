@@ -15,14 +15,8 @@ COPY . .
 
 RUN npm run build
 
-# Final image
-FROM caddy:2.6.2 AS umbrel-nostr-relay
-
 # Change directory to '/app' 
 WORKDIR /app
-
-# Copy Caddy config. file
-COPY Caddyfile /etc/caddy/Caddyfile
 
 # Copy built code from build stage to '/app' directory
 COPY --from=umbrel-nostr-relay-builder /app /app
