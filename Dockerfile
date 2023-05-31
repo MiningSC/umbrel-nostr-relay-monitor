@@ -14,7 +14,7 @@ RUN npm ci
 RUN npm run build
 
 # Final image
-FROM node:18-buster-slim AS umbrel-nostr-relay-monitor
+FROM node:18-buster-slim AS umbrel-nostr-relay
 
 # Create app directory
 WORKDIR /app
